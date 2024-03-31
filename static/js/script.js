@@ -24,7 +24,7 @@ document.getElementById("show_rooms_btn").addEventListener("click", async () => 
                 body: formData
             });
      let result = await response.json();
-
+    document.getElementById("rooms_block").innerHTML = "";
      document.getElementById("text_span_upper1").innerHTML = result["rooms_count"];
      document.getElementById("text_span_upper2").innerHTML = result["window_on_floor"];
 
