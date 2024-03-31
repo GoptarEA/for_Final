@@ -15,6 +15,7 @@ async function getRooms () {
 
 document.getElementById("show_rooms_btn").addEventListener("click", async () => {
     let v = document.getElementById("date-select").value;
+    document.getElementById("date_part").innerHTML = v;
     let formData = new FormData();
     formData.append("date", v);
     let response = await fetch("http://192.168.1.11:5000/api/v1.0/show_rooms",
@@ -23,6 +24,41 @@ document.getElementById("show_rooms_btn").addEventListener("click", async () => 
                 body: formData
             });
      let result = await response.json();
+
+     document.getElementById("text_span_upper1").innerHTML = result["rooms_count"];
+     document.getElementById("text_span_upper2").innerHTML = result["window_on_floor"];
+
+
+     document.getElementById("text_span_upper3").innerHTML = result["rooms_count"];
+     document.getElementById("text_span_upper4").innerHTML = result["rooms_with_light"];
+
+
+
+
+
+
+     let floor_count = result["floors_count"];
+
+
+    let cell = document.createElement("div");
+    cell.setAttribute("class", "room");
+
+
+    let field_row = document.createElement("div");
+    field_row.setAttribute("class", "field_row");
+     for (let i = 0; i < floor_count; i++) {
+        let new_row = field_row.cloneNode();
+        new_row.setAttribute("id", String(i));
+
+        document.getElementById("rooms_block").appendChild(new_row);
+
+     }
+
+
+
+
+
+     console.log(result["floors_count"]);
 
 })
 

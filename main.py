@@ -33,6 +33,7 @@ def show_rooms():
     rooms_with_light = []
     k = 0
     room_number = 0
+    all_windows = []
     for key in rooms:
         r = rooms[key]
         for i in range(rooms_count):
@@ -47,10 +48,13 @@ def show_rooms():
     print(k)
     print(rooms_with_light)
 
-
-
-
-    return {"status": "success"}
+    return {"status": "success",
+            "floors_count": len(rooms),
+            "k": k,
+            "rooms_with_light": " ".join(map(str, rooms_with_light)),
+            "rooms_count": rooms_count,
+            "window_on_floor": " ".join(map(str, windows_for_room))
+            }
 
 
 

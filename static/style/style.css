@@ -9,3 +9,53 @@
     height: 400px;
     background-color: #EEE;
 }
+
+.input_data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.field_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #DDD;
+    width: 800px;
+    height: 40px;
+}
+
+.rooms_block {
+    width: 500px;
+    gap: 20px;
+}
+
+.info_block {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #BBB;
+    width: 150px;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.upper_part {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+}
+
+.down_part {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+}
