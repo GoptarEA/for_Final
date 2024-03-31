@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Предпроф</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <script src="{{ url_for('static', filename='/js/script.js') }}" defer></script>
+</head>
+<body>
+
+    <div class="choose_date_block">
+        <p class="choose_date_text">Выберите дату для отображения: </p>
+        <select name="dates" id="date-select">
+          <option value="">Выберите дату</option>
+            {% for index in range(days) %}
+                <option value={{ dates[index] }} > {{ dates[index] }}</option>
+            {% endfor %}
+        </select>
+
+        <button class="show_rooms" id="show_rooms_btn">Показать комнаты</button>
+    </div>
+
+</body>
+</html>
