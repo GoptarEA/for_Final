@@ -1,4 +1,9 @@
+body {
+    height: 100%;
+}
+
 .main_block {
+    padding: 50px;
     margin-top: 100px;
     display: flex;
     flex-direction: column;
@@ -6,7 +11,9 @@
     justify-content: center;
     border: solid black 1px;
     width: 1000px;
+    height: fit-content;
     background-color: #EEE;
+    gap: 50px;
 }
 
 .input_data {
@@ -15,6 +22,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    gap: 50px;
 }
 
 
@@ -29,7 +37,6 @@
 }
 
 .rooms_block {
-    width: 500px;
     gap: 20px;
 }
 
@@ -58,13 +65,13 @@
 }
 
 .light_room {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     background-color: yellow;
 }
 
 .black_room {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     background-color: #AAA;
 }
