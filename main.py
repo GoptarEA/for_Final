@@ -32,16 +32,20 @@ def show_rooms():
     print(rooms_count)
     rooms_with_light = []
     k = 0
+    room_number = 0
     for key in rooms:
         r = rooms[key]
         for i in range(rooms_count):
+            room_number += 1
             print(r)
             left_win = sum(windows_for_room[:i])
             right_win = sum(windows_for_room[:i]) + windows_for_room[i]
             print(left_win, right_win)
             if any(r[j] for j in range(left_win, right_win)):
                 k += 1
+                rooms_with_light.append(room_number)
     print(k)
+    print(rooms_with_light)
 
 
 
