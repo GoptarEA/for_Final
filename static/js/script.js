@@ -33,7 +33,7 @@ document.getElementById("show_rooms_btn").addEventListener("click", async () => 
      document.getElementById("text_span_upper4").innerHTML = result["rooms_with_light"];
 
 
-    let all_windows = result["all_windows"].split(";");
+    let all_windows = result["all_windows"].split(";").reverse();
     console.log(all_windows);
 
 
