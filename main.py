@@ -36,24 +36,42 @@ def show_rooms():
     all_windows = []
     for key in rooms:
         r = rooms[key]
+        vsp = []
         for i in range(rooms_count):
             room_number += 1
             print(r)
             left_win = sum(windows_for_room[:i])
             right_win = sum(windows_for_room[:i]) + windows_for_room[i]
             print(left_win, right_win)
+            for j in range(left_win, right_win):
+                if r[j]:
+                    vsp.append([True, room_number])
+                else:
+                    vsp.append([False, room_number])
+
+
             if any(r[j] for j in range(left_win, right_win)):
                 k += 1
                 rooms_with_light.append(room_number)
+        all_windows.append(vsp)
     print(k)
     print(rooms_with_light)
+    print("\n\n\n")
+    for ind1 in range(len(all_windows)):
+        for ind2 in range(len(all_windows[ind1])):
+            all_windows[ind1][ind2] = str(all_windows[ind1][ind2][0]) + " " + str(all_windows[ind1][ind2][1])
+    for ind1 in range(len(all_windows)):
+        all_windows[ind1] = ",".join(all_windows[ind1])
+
+
 
     return {"status": "success",
             "floors_count": len(rooms),
             "k": k,
             "rooms_with_light": " ".join(map(str, rooms_with_light)),
             "rooms_count": rooms_count,
-            "window_on_floor": " ".join(map(str, windows_for_room))
+            "window_on_floor": " ".join(map(str, windows_for_room)),
+            "all_windows": ";".join(all_windows)
             }
 
 

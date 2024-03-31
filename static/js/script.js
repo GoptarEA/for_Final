@@ -29,10 +29,12 @@ document.getElementById("show_rooms_btn").addEventListener("click", async () => 
      document.getElementById("text_span_upper2").innerHTML = result["window_on_floor"];
 
 
-     document.getElementById("text_span_upper3").innerHTML = result["rooms_count"];
+     document.getElementById("text_span_upper3").innerHTML = result["k"];
      document.getElementById("text_span_upper4").innerHTML = result["rooms_with_light"];
 
 
+    let all_windows = result["all_windows"].split(";");
+    console.log(all_windows);
 
 
 
@@ -49,6 +51,21 @@ document.getElementById("show_rooms_btn").addEventListener("click", async () => 
      for (let i = 0; i < floor_count; i++) {
         let new_row = field_row.cloneNode();
         new_row.setAttribute("id", String(i));
+
+        let about_rooms = all_windows[i].split(",");
+        console.log(about_rooms);
+
+        for (let j = 0; j < about_rooms.length; j++) {
+            let new_room = cell.cloneNode();
+            let current_room = about_rooms[j].split(" ");
+            if (current_room[0] == "True") {
+                 new_room.setAttribute("class", "light_room");
+            } else {
+                 new_room.setAttribute("class", "black_room");
+            }
+            new_room.innerHTML = current_room[1];
+            new_row.appendChild(new_room);
+        }
 
         document.getElementById("rooms_block").appendChild(new_row);
 
