@@ -1,0 +1,11 @@
+.main_block {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid black 1px;
+    width: 800px;
+    height: 400px;
+    background-color: #EEE;
+}

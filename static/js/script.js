@@ -26,3 +26,20 @@ document.getElementById("show_rooms_btn").addEventListener("click", async () => 
 
 })
 
+
+// N = parseInt(N);
+//
+//    let field_row = document.createElement("div");
+//    field_row.setAttribute("class", "field_row");
+//
+//    let cell = document.createElement("div");
+//    cell.setAttribute("class", "cell");
+//    field_html.style.display = "flex";
+//
+//
+//    for (let i = 0; i < N; i++) {
+//        field.push(new Array(N));
+//        let new_row = field_row.cloneNode();
+//        new_row.setAttribute("id", String(i));
+//
+//
